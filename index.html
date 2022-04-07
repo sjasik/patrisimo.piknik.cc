@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.5.x/dist/vuetify.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+
+  <title>Patrisimo Vaša kuchyňa</title>
+  <meta name="description" content="Objednajte si jedlo jednoducho online." />
+
+  <link href="https://piknik.cc/favicon.ico" type="image/x-icon" rel="icon" />
+
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#007bff" />
+  <link rel="apple-touch-icon" href="/img/icons/manifest-icon-192.png">
+
+  <link href="https://cdn.jsdelivr.net/gh/sjasik/embeddable.piknik.cc@latest/css/app.css" rel="stylesheet" />
+
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+
+<body>
+  <div id="app">
+    <v-app id="inspire">
+      <v-parallax class="hero" src="https://cdn.jsdelivr.net/gh/sjasik/patrisimo.piknik.cc@latest/img/hero-image.jpg">
+        <v-container class="d-flex" style="height: 100%">
+          <v-col cols="12" align-self="end" class="text-left mb-16">
+            <h1 class="mb-4 text-h2 text-lg-h1 font-weight-bold">
+              Patrisimo Vaša kuchyňa
+            </h1>
+            <h4 class="text-subtitle-1 mb-2">
+              Bieloruská 3, 821 06, Bratislava
+            </h4>
+            <v-btn rounded small outlined color="white" href="#more-info">
+              Viac informácií
+            </v-btn>
+          </v-col>
+        </v-container>
+      </v-parallax>
+
+      <v-container fluid>
+        <piknik-embeddable restaurant_id="624e018d2cdf35653f6e3187" primary_color="#007bff" floating_button="true"
+          agreements_url="/podmienky"></piknik-embeddable>
+      </v-container>
+
+      <v-footer padless id="more-info" color="#007bff">
+        <v-container fluid>
+          <v-container>
+            <v-row no-gutters class="my-4">
+              <v-col class="text-left white--text" cols="12">
+                <h4 class="text-h4 font-weight-bold mb-2">Informácie</h4>
+              </v-col>
+
+              <v-col cols="12">
+                <div class="scroller no-scrollbar">
+                  <v-col class="text-left white--text mr-8">
+                    <span class="overline font-weight-bold">Kontakt</span>
+                    <p class="body-2">
+                      <a href="tel:+421 911 667 080" class="text-decoration-none white--text">+421 911 667 080</a><br>
+                      <a href="mailto:patrisimorestaurant@gmail.com"
+                        class="text-decoration-none white--text">patrisimorestaurant@gmail.com</a><br>
+                      <a href="https://patrisimo.sk/" class="text-decoration-none white--text" target="_blank"
+                        rel="noopener">patrisimo.sk</a> <br>
+                    </p>
+                  </v-col>
+                  <v-col class="text-left white--text mr-8">
+                    <span class="overline font-weight-bold">Adresa</span>
+                    <p class="body-2">
+                      <a href="https://goo.gl/maps/eFtyq5SSaDbPFkg7A" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none white--text">Bieloruská 3<br />
+                        821 06 Bratislava</a><br>
+                    </p>
+                  </v-col>
+                  <v-col class="text-left white--text mr-8">
+                    <span class="overline font-weight-bold">Otváracie hodiny</span>
+                    <p class="body-2">
+                      Po - Štv: 10:00 - 15:30<br />
+                      Pia: 10:00 - 16:00<br />
+                      Víkend: zatvorené<br />
+                    </p>
+                  </v-col>
+                  <v-col class="text-left white--text">
+                    <span class="overline font-weight-bold">Donáškové zóny</span>
+                    <p class="body-2">
+                      Bratislava<br />
+                      <!-- <v-tooltip top>
+                        <template v-slot:activator="{ on, attrs }">
+                          <span v-bind="attrs" v-on="on">Zobraziť všetko</span>
+                        </template>
+                        <v-list-item-subtitle></v-list-item-subtitle>
+                      </v-tooltip> -->
+                    </p>
+                  </v-col>
+                </div>
+              </v-col>
+            </v-row>
+            <v-row no-gutters class="my-4">
+              <v-col class="text-left white--text align-self-center" md="6" cols="12">
+                <span class="mr-3">zo ♥ vytvoril</span>
+                <a href="http://piknik.cc" target="_blank" rel="noopener">
+                  <img src="https://cdn.jsdelivr.net/gh/sjasik/piknik.cc@latest/images/piknik-logo-white.svg" width="72"
+                    alt="Piknik.cc logo" />
+                </a>
+              </v-col>
+              <v-spacer></v-spacer>
+              <v-col class="text-right white--text align-self-center d-none d-md-flex ml-2" cols="auto">
+                © {{ new Date().getFullYear() }} Všetky práva vyhradené Patrisimo Vaša kuchyňa
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-container>
+      </v-footer>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      vuetify: new Vuetify({}),
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/gh/sjasik/embeddable.piknik.cc@latest/js/app.js"></script>
+
+  <script>
+    window.onload = () => {
+      "use strict";
+
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("./sw.js");
+      }
+    };
+  </script>
+
+  <style>
+    /* Selection */
+    ::-moz-selection {
+      color: #fff;
+      background: #007bff;
+    }
+
+    ::selection {
+      color: #fff;
+      background: #007bff;
+    }
+
+    /* Hero image */
+    .v-parallax .v-parallax__image-container {
+      filter: brightness(0.8) grayscale(0.1);
+    }
+
+    .hero img.logo {
+      position: absolute;
+    }
+
+    /* Footer - horizontal scroll */
+    .scroller {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      overflow: auto;
+      white-space: nowrap;
+      align-items: start;
+      display: flex;
+    }
+
+    .scroller div {
+      display: inline-block;
+      width: auto;
+    }
+
+    .no-scrollbar {
+      scrollbar-width: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</body>
+
+</html>
