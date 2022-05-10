@@ -11,7 +11,12 @@ const filesToCache = [
     "https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.js",
     "https://cdn.jsdelivr.net/gh/sjasik/embeddable.piknik.cc@latest/js/app.js",
     "https://cdn.jsdelivr.net/gh/sjasik/piknik.cc@latest/images/piknik-logo-white.svg",
-    'https://cdn.jsdelivr.net/gh/sjasik/patrisimo.piknik.cc@latest/img/hero-image.jpg',
+    "https://cdn.jsdelivr.net/gh/sjasik/patrisimo.piknik.cc@latest/img/carousel/slide-1.jpeg",
+    "https://cdn.jsdelivr.net/gh/sjasik/patrisimo.piknik.cc@latest/img/carousel/slide-2.jpeg",
+    "https://cdn.jsdelivr.net/gh/sjasik/patrisimo.piknik.cc@latest/img/carousel/slide-3.jpeg",
+    "https://cdn.jsdelivr.net/gh/sjasik/patrisimo.piknik.cc@latest/img/carousel/slide-4.jpeg",
+    "https://cdn.jsdelivr.net/gh/sjasik/patrisimo.piknik.cc@latest/img/carousel/slide-5.jpeg",
+    "https://cdn.jsdelivr.net/gh/sjasik/patrisimo.piknik.cc@latest/img/powermode.png"
 ];
 
 /* Start the service worker and cache all of the app's content */

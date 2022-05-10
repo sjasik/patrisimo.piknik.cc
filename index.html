@@ -24,29 +24,33 @@
 <body>
   <div id="app">
     <v-app id="inspire">
-      <v-parallax class="hero" src="https://cdn.jsdelivr.net/gh/sjasik/patrisimo.piknik.cc@latest/img/hero-image.jpg">
-        <v-container class="d-flex" style="height: 100%">
-          <v-row align-self="start" class="px-3 mt-2" style="position: absolute">
-            <v-col cols="auto" class="text-left align-self-top">
-              <v-btn rounded x-small outlined color="white" href="https://www.patrisimo.sk/">
-                <v-icon left>mdi-arrow-left</v-icon>
-                Domov
-              </v-btn>
-            </v-col>
-          </v-row>
-          <v-col cols="12" align-self="end" class="text-left mb-16">
-            <h1 class="mb-4 text-h2 text-lg-h1 font-weight-bold">
-              Patrisimo Vaša kuchyňa
-            </h1>
-            <h4 class="text-subtitle-1 mb-2">
-              Bieloruská 3, 821 06, Bratislava
-            </h4>
-            <v-btn rounded small outlined color="white" href="#more-info">
-              Viac informácií
-            </v-btn>
-          </v-col>
-        </v-container>
-      </v-parallax>
+      <v-carousel cycle hide-delimiter-background show-arrows-on-hover>
+        <v-carousel-item v-for="(slide, i) in slides" :key="i">
+          <v-parallax class="hero" :src="slide">
+            <v-container class="d-flex" style="height: 100%">
+              <v-row align-self="start" class="px-3 mt-2" style="position: absolute">
+                <v-col cols="auto" class="text-left align-self-top">
+                  <v-btn rounded x-small outlined color="white" href="https://www.patrisimo.sk/">
+                    <v-icon left>mdi-arrow-left</v-icon>
+                    Domov
+                  </v-btn>
+                </v-col>
+              </v-row>
+              <v-col cols="12" align-self="end" class="text-left mb-16">
+                <h1 class="mb-4 text-h2 text-lg-h1 font-weight-bold">
+                  Patrisimo Vaša kuchyňa
+                </h1>
+                <h4 class="text-subtitle-1 mb-2">
+                  Bieloruská 3, 821 06, Bratislava
+                </h4>
+                <v-btn rounded small outlined color="white" href="#more-info">
+                  Viac informácií
+                </v-btn>
+              </v-col>
+            </v-container>
+          </v-parallax>
+        </v-carousel-item>
+      </v-carousel>
 
       <v-container fluid>
         <piknik-embeddable restaurant_id="624e018d2cdf35653f6e3187" primary_color="#007bff" floating_button="true"
@@ -113,8 +117,10 @@
                 </a>
               </v-col>
               <v-spacer></v-spacer>
-              <v-col class="text-right white--text align-self-center d-none d-md-flex ml-2" cols="auto">
-                © {{ new Date().getFullYear() }} Všetky práva vyhradené Patrisimo Vaša kuchyňa
+              <v-col class="text-right white--text align-self-center align-center d-none d-md-flex ml-2" cols="auto">
+                © {{ new Date().getFullYear() }} Všetky práva vyhradené Patrisimo Vaša kuchyňa<br>
+                <img src="https://cdn.jsdelivr.net/gh/sjasik/patrisimo.piknik.cc@latest/img/powermode.png" width="72"
+                  alt="Powermode logo" class="ml-3" />
               </v-col>
             </v-row>
           </v-container>
@@ -129,6 +135,17 @@
     new Vue({
       el: "#app",
       vuetify: new Vuetify({}),
+      data() {
+        return {
+          slides: [
+            "https://cdn.jsdelivr.net/gh/sjasik/patrisimo.piknik.cc@latest/img/carousel/slide-1.jpeg",
+            "https://cdn.jsdelivr.net/gh/sjasik/patrisimo.piknik.cc@latest/img/carousel/slide-2.jpeg",
+            "https://cdn.jsdelivr.net/gh/sjasik/patrisimo.piknik.cc@latest/img/carousel/slide-3.jpeg",
+            "https://cdn.jsdelivr.net/gh/sjasik/patrisimo.piknik.cc@latest/img/carousel/slide-4.jpeg",
+            "https://cdn.jsdelivr.net/gh/sjasik/patrisimo.piknik.cc@latest/img/carousel/slide-5.jpeg",
+          ]
+        };
+      },
     });
   </script>
 
